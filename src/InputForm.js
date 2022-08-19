@@ -1,5 +1,7 @@
 import {useState} from 'react';
-import DisplayLetters from './displayLetters.js'
+import DisplayLetters from './displayLetters.js';
+import Button from '@mui/material/Button';
+import {Box} from '@mui/material';
 
 const countLetters = (inputString) => {
     const allowedLetters = "abcdefghijklmnopqrstuvwxyz";
