@@ -17,6 +17,12 @@ code {
     monospace;
 }
 
+.page-header h1 {
+  margin: 4px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .input-form {
   max-width: 400px;
   margin: 0 auto;
@@ -44,6 +50,11 @@ code {
 
 }
 
+.display-letters h4 {
+  padding: 5px;
+  margin-left: auto;
+}
+
 .display-letters table {
   margin-left: auto;
   margin-right: auto;
@@ -54,13 +65,22 @@ code {
   padding-right: 5px;
 }
 
-.display-letters tr:nth-of-type(even) {
+.display-letters .zero {
+  background-color: #aaa;
+}
+
+.display-letters .equal {
   background-color: #ddd;
 }
 
-.display-letters tr:nth-of-type(odd) {
-  background-color: #bbb
+.display-letters .less {
+  background-color: rgb(254, 136, 136)
 }
+
+.display-letters .greater {
+  background-color: rgb(110, 252, 174)
+}
+
 .display-letters p {
   padding: 8px;
   font-size: 12px;
