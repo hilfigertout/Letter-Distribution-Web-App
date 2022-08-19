@@ -1,7 +1,8 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import DisplayLetters from './displayLetters.js';
 import Button from '@mui/material/Button';
 import {Box} from '@mui/material';
+import {TextField} from  "@mui/material"
 
 const countLetters = (inputString) => {
     const allowedLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -48,19 +49,52 @@ const InputForm = () => {
         setIsPending(false);
     };
 
-    return ( 
-        <div className="input-form">
-            <h2>Letter Count</h2>
-            {!counted && <form onSubmit={handleSubmit}>
-                <label>Enter your text here</label>
-                <textarea
-                required 
-                value={textEntered}
-                onChange={(e) => setTextEntered(e.target.value)}></textarea>
-                { !isPending ? <button>Count letters</button> : <button disabled>Counting...</button> }
-             </form>
+    const handleChange = (event) => {
+        setTextEntered(event.target.value);
+    };
+
+    return (
+        <div className="inputForm"> 
+        {!counted && 
+        <Box 
+        sx={{ m : 4, border: 0}}
+        component = "form"
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        >  
+            <TextField 
+            margin="normal"
+            border="0"
+            multiline
+            rows={6}
+            id="input-string"
+            label="Enter String Here"
+            value={textEntered}
+            fullWidth
+            variant="outlined"
+            onChange={handleChange}
+            />
+            {!isPending 
+            ?
+            <Button 
+              type="submit"
+              variant="contained"
+              sx={{mt: 3, mb: 2}}>
+                Count Letters
+            </Button> 
+            :
+            <Button
+            disabled
+            type="submit"
+            variant="contained"
+            sx={{mt: 3, mb: 2}}>
+              Counting...
+           </Button>
             }
-            {counted && <DisplayLetters inputString={textEntered} letterCount={letterCount} expectedCount={expectedCount} />}
+        </Box>
+        }
+        
+        {counted && <DisplayLetters inputString={textEntered} letterCount={letterCount} expectedCount={expectedCount} />}
         </div>
      );
 }
