@@ -3,6 +3,7 @@ import DisplayLetters from './displayLetters.js';
 import Button from '@mui/material/Button';
 import {Box} from '@mui/material';
 import {TextField} from  "@mui/material"
+import {useNavigate} from 'react-router-dom';
 
 const countLetters = (inputString) => {
     const allowedLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -31,22 +32,18 @@ const countLetters = (inputString) => {
 }
 
 
-const InputForm = () => {
+const InputForm = ({textEntered, setTextEntered, setLetterCount, setExpectedCount}) => {
 
-    const [textEntered, setTextEntered] = useState("");
     const [isPending, setIsPending] = useState(false);
-    const [letterCount, setLetterCount] = useState({});
-    const [expectedCount, setExpectedCount] = useState({});
-    const [counted, setCounted] = useState(false);
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsPending(true);
         let [newLetterCount, newExpectedCount] = countLetters(textEntered);
         setLetterCount(newLetterCount);
         setExpectedCount(newExpectedCount);
-        console.log(letterCount);
-        setCounted(true);
         setIsPending(false);
+        navigate("/word-count")
     };
 
     const handleChange = (event) => {
@@ -55,46 +52,42 @@ const InputForm = () => {
 
     return (
         <div className="inputForm"> 
-        {!counted && 
-        <Box 
-        sx={{ m : 4, border: 0}}
-        component = "form"
-        autoComplete="off"
-        onSubmit={handleSubmit}
-        >  
-            <TextField 
-            margin="normal"
-            border="0"
-            multiline
-            rows={6}
-            id="input-string"
-            label="Enter String Here"
-            value={textEntered}
-            fullWidth
-            variant="outlined"
-            onChange={handleChange}
-            />
-            {!isPending 
-            ?
-            <Button 
-              type="submit"
-              variant="contained"
-              sx={{mt: 3, mb: 2}}>
-                Count Letters
-            </Button> 
-            :
-            <Button
-            disabled
-            type="submit"
-            variant="contained"
-            sx={{mt: 3, mb: 2}}>
-              Counting...
-           </Button>
-            }
-        </Box>
-        }
-        
-        {counted && <DisplayLetters inputString={textEntered} letterCount={letterCount} expectedCount={expectedCount} />}
+            <Box 
+            sx={{ m : 4, border: 0}}
+            component = "form"
+            autoComplete="off"
+            onSubmit={handleSubmit}
+            >  
+                <TextField 
+                margin="normal"
+                border="0"
+                multiline
+                rows={6}
+                id="input-string"
+                label="Enter String Here"
+                value={textEntered}
+                fullWidth
+                variant="outlined"
+                onChange={handleChange}
+                />
+                {!isPending 
+                ?
+                <Button 
+                type="submit"
+                variant="contained"
+                sx={{mt: 3, mb: 2}}>
+                    Count Letters
+                </Button> 
+                :
+                <Button
+                disabled
+                type="submit"
+                variant="contained"
+                sx={{mt: 3, mb: 2}}>
+                    Counting...
+                </Button>
+                }
+            </Box>
         </div>
      );
 }
