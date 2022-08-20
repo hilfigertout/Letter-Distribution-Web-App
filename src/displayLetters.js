@@ -73,6 +73,7 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
             </Box>
             <p>Expected count calculated from the <a href="http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html" target="_blank" rel="noreferrer">Cornell University English Letter Frequency Table</a>.</p>
             <p>Percent difference is 100*(observed - expected)/expected</p>
+            <p>Green coloring means more than 5% difference between observed and expected, red coloring means less than -5% difference.</p>
             <Button onClick={() => navigate("/")}>Back to String Input</Button>
             <Divider role="presentation">String Entered</Divider>
             <p>{inputString}</p>

@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import './index.css';
 import InputForm from './InputForm';
-import DisplayLetters from './displayLetters';
-import PageHeader from './pageHeader';
+import DisplayLetters from './DisplayLetters';
+import PageHeader from './PageHeader';
 import { Backdrop, CircularProgress } from '@mui/material';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
