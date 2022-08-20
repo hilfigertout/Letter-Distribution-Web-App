@@ -26,7 +26,7 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
             cellClassName: (params) => {
                 return(clsx('super-app', {
                     zero: params.value === -100,
-                    low: params.value < -5,
+                    low: (params.value < -5 && params.value !== -100),
                     equal: (params.value >= -5 && params.value <= 5),
                     high: params.value > 5,  
                 }))
@@ -34,9 +34,6 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
     ];
 
     const rows = parseRows(letterCount, expectedCount);
-
-    console.log(rows);
-    console.log(columns);
 
     return (
         <div className="display-letters">
