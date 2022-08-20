@@ -19,6 +19,11 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
         return rows;
     };
 
+    let totalLetters = 0;
+    for (const letter in letterCount) {
+        totalLetters += letterCount[letter];
+    }
+
     const navigate = useNavigate();
 
 
@@ -41,6 +46,7 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
 
     return (
         <div className="display-letters">
+            <h3>Total Letters: {totalLetters}</h3>
             <Box 
             sx={{
                 height: 600, width: "70%", margin: "auto",
@@ -65,7 +71,7 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
                 hideFooter
                 />
             </Box>
-            <p>Expected count calculated from <a href="http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html" target="_blank" rel="noreferrer">Cornell University Frequency Table</a>.</p>
+            <p>Expected count calculated from the <a href="http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html" target="_blank" rel="noreferrer">Cornell University English Letter Frequency Table</a>.</p>
             <p>Percent difference is 100*(observed - expected)/expected</p>
             <Button onClick={() => navigate("/")}>Back to String Input</Button>
             <Divider role="presentation">String Entered</Divider>
