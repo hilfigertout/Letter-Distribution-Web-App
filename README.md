@@ -8,7 +8,13 @@ This project creates a simple web app using [REACT](https://reactjs.org/) with [
 
  - **LICENSE**: this project is under the MIT license. See inside for more info. 
 
- - **letter-distribution**: this folder contains the REACT app named "letter-distribution". If you're new to REACT, the source code for this application is in **letter-distribution/src**, and in particular in the **App.js**, **InputForm.js**, **DisplayLetters.js**, and **PageHeader.js** files. 
+ - **src**: this folder contains the source code for this application. In particular, most of the code I wrote is in the **App.js**, **InputForm.js**, **DisplayLetters.js**, **PageHeader.js**, and **index.css** files. 
+
+ - **public**: This folder comes with every REACT app. It contains the HTML file (without any Javascript) sent to the client, as well as a **robots.txt** file for the bots that comb the web. 
+
+ - **package.json** and **package-lock.json**: files used by npm to install required libraries.
+
+ - **.gitignore**: if you're on GitHub and don't know what this is, go look it up. Like, today.
 
 ## Usage
 
@@ -30,7 +36,7 @@ A new browser tab should open on your computer automatically, but if not, the te
 
 ## Personal Note
 
-This project was my way of flexing my REACT skills after going through a few tutorials online. (I recommend the series by [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d), though as is typical of front-end development, his section on REACT's router library is already somewhat outdated.) This project was also a way for me to dip my toes into the Material UI library, as I will be likely be using it in an upcoming job. I don't expect this app itself to have much practical use, but it's nice to have in my portfolio. 
+This project was my way of flexing my REACT skills after going through a few tutorials online. (I recommend the series from 2021 by [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d), though as is typical of front-end development, his section on REACT's router library is already somewhat outdated.) This project was also a way for me to dip my toes into the Material UI library, as I will be likely be using it in an upcoming job. I don't expect this app itself to have much practical use, but it's nice to have in my portfolio. 
 
 
 #### Copyright (C) 2022 Ian Roberts
