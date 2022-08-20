@@ -17,10 +17,16 @@ code {
     monospace;
 }
 
+.App {
+  text-align: center;
+}
+
 .page-header h1 {
   margin: 4px;
-  text-decoration: underline;
-  cursor: pointer;
+}
+
+.page-header {
+  padding: 5px;
 }
 
 .input-form {
@@ -49,37 +55,6 @@ code {
   padding: 8px;
 
 }
-
-/* .display-letters h4 {
-  padding: 5px;
-  margin-left: auto;
-}
-
-.display-letters table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.display-letters th {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.display-letters .zero {
-  background-color: #aaa;
-}
-
-.display-letters .equal {
-  background-color: #ddd;
-}
-
-.display-letters .less {
-  background-color: rgb(254, 136, 136)
-}
-
-.display-letters .greater {
-  background-color: rgb(110, 252, 174)
-} */
 
 .display-letters p {
   padding: 8px;

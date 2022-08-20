@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import { DataGrid } from '@mui/x-data-grid';
 import { Box } from "@mui/system";
+import {Button, Divider} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const DisplayLetters = ({inputString, letterCount, expectedCount}) => {   
 
@@ -17,15 +19,17 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
         return rows;
     };
 
+    const navigate = useNavigate();
+
 
     const columns = [
         { field: 'letter', headerName: 'Letter', width: 70},
-        { field: 'count', headerName: 'Observed Count', type: 'number', flex: 1},
+        { field: 'count', headerName: 'Observed Count', type: 'number', flex: 1,},
         { field: 'expectedCount', headerName: 'Expected Count', type: 'number', flex: 1},
         { field: 'percentDifference', headerName: 'Percent Difference (%)', type: 'number', flex: 1,
             cellClassName: (params) => {
                 return(clsx('super-app', {
-                    zero: params.value === -100,
+                    zero: (isNaN(params.value) || params.value === -100),
                     low: (params.value < -5 && params.value !== -100),
                     equal: (params.value >= -5 && params.value <= 5),
                     high: params.value > 5,  
@@ -39,9 +43,9 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
         <div className="display-letters">
             <Box 
             sx={{
-                height: 600, width: "60%", margin: "auto",
+                height: 600, width: "70%", margin: "auto",
                 '& .super-app.zero': {
-                    backgroundColor: '#aaa'
+                    backgroundColor: '#000'
                 },
                 '& .super-app.low': {
                     backgroundColor: 'rgb(254, 136, 136)'
@@ -56,16 +60,16 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
                 <DataGrid 
                 rows={rows}
                 columns={columns}
-                pageSize={26}
-                rowsPerPageOptions={[26]}
+                pageSize={Object.keys(letterCount).length}
                 disableSelectionOnClick
                 hideFooter
                 />
-                <p>Expected letters calculated from <a href="http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html">Cornell University Frequency Table</a>.</p>
-                <h3>String Entered</h3>
-                <p>{inputString}</p>
             </Box>
-        
+            <p>Expected count calculated from <a href="http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html" target="_blank" rel="noreferrer">Cornell University Frequency Table</a>.</p>
+            <p>Percent difference is 100*(observed - expected)/expected</p>
+            <Button onClick={() => navigate("/")}>Back to String Input</Button>
+            <Divider role="presentation">String Entered</Divider>
+            <p>{inputString}</p>
         </div> 
         );
 }

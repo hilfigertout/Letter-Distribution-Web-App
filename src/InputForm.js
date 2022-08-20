@@ -1,13 +1,9 @@
-import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import {Box} from '@mui/material';
 import {TextField} from  "@mui/material"
 import {useNavigate} from 'react-router-dom';
 
-const countLetters = (inputString) => {
-    const allowedLetters = "abcdefghijklmnopqrstuvwxyz";
-    //Real Frequencies of "J" and "Z" were boosted slightly to ensure that these frequencies sum to 1. 
-    const realFrequencies = [0.0812, 0.0149, 0.0271, 0.0432, 0.1202, 0.0230, 0.0203, 0.0592, 0.0731, 0.00105 , 0.0069, 0.0398 , 0.0261, 0.0695, 0.0768, 0.0182, 0.0011, 0.0602, 0.0628, 0.0910, 0.0288, 0.0111, 0.0209, 0.0017, 0.0211, 0.00075]
+const countLetters = (inputString, allowedLetters, realFrequencies) => {
     let letterCount = {}
     let expectedCount = {}
     let numLetters = 0;
@@ -31,14 +27,14 @@ const countLetters = (inputString) => {
 }
 
 
-const InputForm = ({textEntered, setTextEntered, setLetterCount, setExpectedCount}) => {
+const InputForm = ({allowedLetters, realFrequencies, textEntered, setTextEntered, setLetterCount, setExpectedCount, isPending, setIsPending}) => {
 
-    const [isPending, setIsPending] = useState(false);
+
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsPending(true);
-        let [newLetterCount, newExpectedCount] = countLetters(textEntered);
+        let [newLetterCount, newExpectedCount] = countLetters(textEntered, allowedLetters, realFrequencies);
         setLetterCount(newLetterCount);
         setExpectedCount(newExpectedCount);
         setIsPending(false);
@@ -50,9 +46,10 @@ const InputForm = ({textEntered, setTextEntered, setLetterCount, setExpectedCoun
     };
 
     return (
-        <div className="inputForm"> 
+        <div className="inputForm">
+            <p>Type in a string, and this webpage will count the occurrences of each letter and compare it to the frequency of letters across the English language.</p> 
             <Box 
-            sx={{ m : 4, border: 0}}
+            sx={{ margin : "auto", border: 0, width: "50%"}}
             component = "form"
             autoComplete="off"
             onSubmit={handleSubmit}
@@ -61,7 +58,7 @@ const InputForm = ({textEntered, setTextEntered, setLetterCount, setExpectedCoun
                 margin="normal"
                 border="0"
                 multiline
-                rows={6}
+                rows={12}
                 id="input-string"
                 label="Enter String Here"
                 value={textEntered}
