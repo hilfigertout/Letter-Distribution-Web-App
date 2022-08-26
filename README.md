@@ -18,9 +18,11 @@ This project creates a simple web app using [REACT](https://reactjs.org/) with [
 
 ## Usage
 
-As of 20 August 2022, this web app has not been deployed anywhere. Therefore, if you want to see what it does, you will have to run it locally. 
+As of 25 August 2022, this app has been deployed via GitHub Pages to https://hilfigertout.github.io/Letter-Distribution-Web-App/. Follow the URL to see the page and test the letter distributions in strings.  
 
-To run this, you will need [NodeJS](https://nodejs.org/en/download/) installed, which should come with the Node Package Manager (npm). With a terminal open in the top level directory for this app, first install the required packages with the following command:
+### Running the App Locally
+
+If you wish to run this locally as a REACT app, you will need [NodeJS](https://nodejs.org/en/download/) installed, which should come with the Node Package Manager (npm). With a terminal open in the top level directory for this app, first install the required packages with the following command:
 
 ```
 npm install
