@@ -47,7 +47,7 @@ function App() {
                                     isPending={isPending}
                                     setIsPending={setIsPending} />} 
           />
-          <Route path="/word-count" element={<DisplayLetters 
+          <Route path="/count" element={<DisplayLetters 
                                               inputString={textEntered} 
                                               letterCount={letterCount}
                                               expectedCount={expectedCount}/>} 

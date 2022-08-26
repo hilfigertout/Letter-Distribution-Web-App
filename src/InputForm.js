@@ -38,7 +38,7 @@ const InputForm = ({allowedLetters, realFrequencies, textEntered, setTextEntered
         setLetterCount(newLetterCount);
         setExpectedCount(newExpectedCount);
         setIsPending(false);
-        navigate("/word-count")
+        navigate("/count")
     };
 
     const handleChange = (event) => {

@@ -57,7 +57,7 @@ const DisplayLetters = ({inputString, letterCount, expectedCount}) => {
                     backgroundColor: 'rgb(254, 136, 136)'
                 },
                 '& .super-app.equal': {
-                    backgroundColor: '#ddd'
+                    backgroundColor: '#fff'
                 }, 
                 '& .super-app.high': {
                     backgroundColor: 'rgb(110, 252, 174)'
