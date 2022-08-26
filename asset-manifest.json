@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/letter-distribution-web-app/static/css/main.e8e717e3.css",
+    "main.js": "/letter-distribution-web-app/static/js/main.f1cd1652.js",
+    "static/js/787.608015d2.chunk.js": "/letter-distribution-web-app/static/js/787.608015d2.chunk.js",
+    "index.html": "/letter-distribution-web-app/index.html",
+    "main.e8e717e3.css.map": "/letter-distribution-web-app/static/css/main.e8e717e3.css.map",
+    "main.f1cd1652.js.map": "/letter-distribution-web-app/static/js/main.f1cd1652.js.map",
+    "787.608015d2.chunk.js.map": "/letter-distribution-web-app/static/js/787.608015d2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8e717e3.css",
+    "static/js/main.f1cd1652.js"
+  ]
+}
