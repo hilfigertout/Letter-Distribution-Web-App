@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Letter-Distribution-Web-App/static/css/main.e8e717e3.css",
-    "main.js": "/Letter-Distribution-Web-App/static/js/main.10688afa.js",
+    "main.js": "/Letter-Distribution-Web-App/static/js/main.b4b1502f.js",
     "static/js/787.608015d2.chunk.js": "/Letter-Distribution-Web-App/static/js/787.608015d2.chunk.js",
     "index.html": "/Letter-Distribution-Web-App/index.html",
     "main.e8e717e3.css.map": "/Letter-Distribution-Web-App/static/css/main.e8e717e3.css.map",
-    "main.10688afa.js.map": "/Letter-Distribution-Web-App/static/js/main.10688afa.js.map",
+    "main.b4b1502f.js.map": "/Letter-Distribution-Web-App/static/js/main.b4b1502f.js.map",
     "787.608015d2.chunk.js.map": "/Letter-Distribution-Web-App/static/js/787.608015d2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8e717e3.css",
-    "static/js/main.10688afa.js"
+    "static/js/main.b4b1502f.js"
   ]
 }
